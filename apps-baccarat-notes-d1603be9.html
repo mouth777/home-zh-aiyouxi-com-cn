@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐的节奏 · 一种纸牌游戏的自然入口</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8f5f0;
+            font-family: 'Georgia', 'Noto Serif SC', 'Songti SC', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2c2b28;
+            padding: 0 1.25rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page {
+            max-width: 760px;
+            width: 100%;
+            margin: 3.5rem auto 4rem;
+            background: #fffcf9;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        @media (max-width: 600px) {
+            .page {
+                padding: 2rem 1.25rem;
+                margin: 2rem auto 3rem;
+                border-radius: 18px;
+            }
+        }
+
+        .opening {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #4a4238;
+            margin-bottom: 1.8rem;
+            border-left: 4px solid #c9b99a;
+            padding-left: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .opening em {
+            font-style: italic;
+            color: #7f6e5a;
+        }
+
+        .intro p {
+            margin-bottom: 1.4rem;
+            font-size: 1.05rem;
+        }
+
+        .intro a {
+            color: #8b6f4c;
+            text-decoration: none;
+            border-bottom: 1px solid #dacfc1;
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .intro a:hover {
+            border-bottom-color: #8b6f4c;
+            color: #5f4d36;
+        }
+
+        .intro strong {
+            font-weight: 600;
+            color: #3f372e;
+        }
+
+        .pull-quote {
+            background: #f3ede6;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 1.8rem;
+            border-radius: 16px;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: #3d352c;
+            border-left: 6px solid #b7a387;
+            font-style: normal;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
+        }
+
+        .pull-quote::before {
+            content: "“";
+            font-size: 2.4rem;
+            color: #b6a082;
+            margin-right: 6px;
+            vertical-align: middle;
+            line-height: 1;
+            font-family: 'Georgia', serif;
+        }
+
+        .pull-quote::after {
+            content: "”";
+            font-size: 2.4rem;
+            color: #b6a082;
+            margin-left: 6px;
+            vertical-align: bottom;
+            line-height: 1;
+            font-family: 'Georgia', serif;
+        }
+
+        .feature-list {
+            margin: 2.2rem 0 1.8rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .feature-list li {
+            padding: 0.7rem 0 0.7rem 2rem;
+            position: relative;
+            font-size: 1rem;
+            border-bottom: 1px dashed #e5ddd3;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.3rem;
+            top: 0.7rem;
+            font-size: 1.8rem;
+            color: #b09375;
+            line-height: 1;
+        }
+
+        .scene-note {
+            background: #fffbf7;
+            border-radius: 20px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0 1.2rem;
+            border: 1px solid #eae2d6;
+        }
+
+        .scene-note p {
+            margin-bottom: 0.6rem;
+            font-size: 1.02rem;
+        }
+
+        .scene-note .label {
+            display: inline-block;
+            background: #dfd3c4;
+            color: #3e3328;
+            font-size: 0.8rem;
+            padding: 0.15rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.6rem;
+            font-weight: 500;
+        }
+
+        .soft-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d6cbbc, transparent);
+            margin: 2rem 0 1.8rem;
+        }
+
+        .ending {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            font-size: 1rem;
+            color: #4d4439;
+        }
+
+        .ending p {
+            margin-bottom: 0.8rem;
+        }
+
+        .faq-mini {
+            background: #faf6f0;
+            border-radius: 16px;
+            padding: 1.6rem 2rem;
+            margin: 2.2rem 0 1rem;
+        }
+
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4d3f30;
+            margin-bottom: 1rem;
+            letter-spacing: 0.3px;
+        }
+
+        .faq-item {
+            margin-bottom: 0.9rem;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #3e342a;
+            display: block;
+            margin-bottom: 0.15rem;
+        }
+
+        .faq-item .a {
+            font-size: 0.98rem;
+            color: #5c5246;
+            padding-left: 0.6rem;
+        }
+
+        .faq-item .a a {
+            color: #8b6f4c;
+            border-bottom: 1px solid #dacfc1;
+            text-decoration: none;
+        }
+
+        .faq-item .a a:hover {
+            border-bottom-color: #7f5f3e;
+        }
+
+        .note-tip {
+            font-size: 0.95rem;
+            background: #efe9e0;
+            padding: 0.9rem 1.4rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 0.8rem;
+            color: #4d3c2b;
+        }
+
+        .footer-meta {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #8e847a;
+            border-top: 1px solid #e7dfd4;
+            padding-top: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="opening">
+            <em>有些游戏，像一阵风，吹过就散了。</em> 而有些，像一张旧桌子，带着木纹和温度。
+        </div>
+
+        <div class="intro">
+            <p>
+                桌面上铺着墨绿色的绒布，牌被轻轻推过来，没有催促，也没有旁白。
+                如果你曾在某个深夜或者某个无所事事的下午，看过几个朋友围坐，指尖翻动纸牌，
+                你大概会明白那种无须多言的默契——<strong>节奏本身，就是语言</strong>。
+            </p>
+            <p>
+                而提到纸牌游戏里这种从容与悬念交织的节奏，很多人会想到一个名字：
+                <a href="https://apps-baccarat.com">百家乐</a>。
+                它不喧哗，却有一种稳定的呼吸感。不是靠复杂的规则堆积起来的，而是建立在简单的选择之上——
+                你押哪一方，牌面会怎样展开，然后等待荷官翻牌的那几秒钟。
+            </p>
+        </div>
+
+        <div class="pull-quote">
+            牌不会说话，但每一次翻开都像一句短句。没有多余的解释，只有结果——干净，磊落。
+        </div>
+
+        <ul class="feature-list">
+            <li><strong>不绕弯子的规则</strong> —— 只有庄、闲、和三种结果，初学者也能在几分钟内看懂牌局走向。</li>
+            <li><strong>节奏自由</strong> —— 你可以连续跟几手，也可以停下来喝口茶，没有人催促，桌子始终在那里。</li>
+            <li><strong>社交与独处的平衡</strong> —— 可以一群人一起看牌，也可以自己安静地研究走势，各有各的乐趣。</li>
+            <li><strong>视觉与触感的记忆</strong> —— 纸牌的纹理、筹码的碰撞、屏幕上的数字跳动，每一种介质都有自己的质感。</li>
+        </ul>
+
+        <div class="scene-note">
+            <span class="label">🌿 一个常见的场景</span>
+            <p>周末傍晚，窗外的光线开始变暗，桌上点了一盏暖色的台灯。你打开一个页面，牌桌缓缓出现。
+            没有音乐，只有洗牌的细碎声响。你押了一手「闲」，然后靠向椅背，看着牌一张张被翻开。
+            输赢不是重点，重点是那几分钟里，你的注意力完全收束在眼前——日常的杂音都不见了。</p>
+        </div>
+
+        <div class="soft-divider"></div>
+
+        <div class="faq-mini">
+            <h3>一些简短的问题 · 自然的印象</h3>
+            <div class="faq-item">
+                <span class="q">❓ 百家乐需要记住很多牌吗？</span>
+                <span class="a">不需要记忆花色或顺序，只需知道每张牌的点数（10和花牌算0，A算1）。几乎没有记忆负担。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">❓ 适合完全没接触过的人吗？</span>
+                <span class="a">非常适合。因为核心行动就是选择「庄」或「闲」，然后看牌。你可以在 <a href="https://apps-baccarat.com">百家乐</a> 页面里慢慢熟悉，不用着急。</span>
+            </div>
+            <div class="faq-item">
+                <span class="q">❓ 为什么很多人说它有一种「安静的吸引力」？</span>
+                <span class="a">可能是因为每局之间有一段自然的空白——下注、等待、翻牌、结算。这段空白不填满，反而让人感到放松。</span>
+            </div>
+        </div>
+
+        <div class="ending">
+            <p>
+                说到底，无论是实体牌桌还是屏幕上的数字界面，<strong>百家乐</strong>提供的不只是一场输赢，
+                而是一个可以短暂栖息的节奏空隙。生活已经够快了，偶尔有一件需要等待结果的事情，反而让人慢下来。
+            </p>
+            <p>
+                下次想找一种不费力的节奏，或许可以试试泡杯茶，坐下来，看看牌。
+                网址就放在这里：<a href="https://apps-baccarat.com">百家乐</a>。没有入口的压迫感，只是一个安静的去处。
+            </p>
+            <div class="note-tip">
+                ⏳ 一局大约 30 秒到 1 分钟，时间刚好够喝完半杯温水。
+            </div>
+        </div>
+
+        <div class="footer-meta">
+            一种纸牌游戏的自然入口 · 节奏比结果更持久
+        </div>
+    </div>
+</body>
+</html>
