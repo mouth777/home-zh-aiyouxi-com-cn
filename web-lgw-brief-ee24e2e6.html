@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>老哥社区 · 资料整理与索引平台</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f0f2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e2a3a;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      border: 1px solid #eaeef2;
+      margin-bottom: 2.5rem;
+    }
+
+    .logo {
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: #1e2a3a;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #3b6e9c;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3b5b7a;
+      font-size: 0.95rem;
+      padding: 0.25rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1e2a3a;
+      border-bottom-color: #3b6e9c;
+    }
+
+    /* hero 简介区 */
+    .hero {
+      background: #ffffff;
+      border: 1px solid #e2e8ed;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.1rem;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+      color: #16212e;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #2c3f52;
+      max-width: 700px;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero .intro-link {
+      background: #f0f4f9;
+      display: inline-block;
+      padding: 0.4rem 1rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      border: 1px solid #d6e1ea;
+    }
+
+    /* 三个场景模块 */
+    .scenes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e2e8ed;
+      border-radius: 18px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-card h3 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #1e2a3a;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #eaedf0;
+    }
+
+    .scene-card p {
+      color: #304258;
+      font-size: 0.975rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background: #eef3f8;
+      color: #2b4b68;
+      padding: 0.15rem 0.75rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      border: 1px solid #d5e0e9;
+      margin-top: 0.2rem;
+    }
+
+    /* 常见说明 & faq摘要 */
+    .faq-section {
+      background: #ffffff;
+      border: 1px solid #e2e8ed;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02);
+      margin-bottom: 2.8rem;
+    }
+
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #16212e;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #edf1f5;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1a2b3d;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #364c60;
+      font-size: 0.95rem;
+    }
+
+    .faq-item a {
+      color: #3b6e9c;
+      text-decoration: none;
+      border-bottom: 1px dotted #b8ccde;
+    }
+
+    .faq-item a:hover {
+      color: #1a405c;
+      border-bottom-color: #3b6e9c;
+    }
+
+    /* 底部与链接 */
+    .footer-note {
+      text-align: center;
+      color: #556c7d;
+      font-size: 0.9rem;
+      border-top: 1px solid #dce3e9;
+      padding-top: 1.8rem;
+      margin-top: 1.2rem;
+    }
+
+    .footer-note a {
+      color: #2b577a;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd7e3;
+    }
+
+    .footer-note a:hover {
+      color: #162b3b;
+      border-bottom-color: #2b577a;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .scene-card {
+        padding: 1.25rem;
+      }
+      .faq-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部导航 -->
+  <div class="nav">
+    <div class="logo">资料索引 · <span>老哥社区</span></div>
+    <div class="nav-links">
+      <a href="#">场景</a>
+      <a href="#">分类</a>
+      <a href="#">整理日志</a>
+      <a href="#">关于</a>
+    </div>
+  </div>
+
+  <!-- hero 区域 -->
+  <div class="hero">
+    <h1>信息整理与索引</h1>
+    <p>
+      从零散到有序，从收藏到索引。<a href="https://web-lgw.com" style="color: #2b577a; text-decoration: underline; text-underline-offset: 3px;">老哥社区</a> 立足于资料的可查找性，
+      将日常积累的笔记、文档、链接和结构化的知识卡片进行统一归拢，方便回头翻阅和交叉引用。
+    </p>
+    <p>
+      这里的核心不是搬运信息，而是为每一条内容建立上下文。你可以把社区理解成一个私人的资料导航站，只不过它被开放出来，供有相似需求的人参考。
+    </p>
+    <div class="intro-link">
+      ⚡ 聚合 · 分类 · 检索
+    </div>
+  </div>
+
+  <!-- 三个场景卡片 -->
+  <div class="scenes">
+    <div class="scene-card">
+      <h3>📂 主题资料夹</h3>
+      <p>按项目、研究或兴趣建立独立资料夹，每一条都带有来源和摘要。避免内容沉底，方便在需要时快速定位。</p>
+      <span class="tag">整理思路</span>
+      <span class="tag">交叉标记</span>
+    </div>
+    <div class="scene-card">
+      <h3>🔗 索引链接集</h3>
+      <p>将相关网站、文档、论文和工具按照主题整理成可检索的索引页，减少重复搜索时间，也保留查阅时的上下文。</p>
+      <span class="tag">结构化</span>
+      <span class="tag">可扩展</span>
+    </div>
+    <div class="scene-card">
+      <h3>📝 轻笔记快照</h3>
+      <p>阅读或讨论时产生的简短笔记，经过二次整理后归入对应分类。不求面面俱到，只保留真正有参考价值的片段。</p>
+      <span class="tag">低冗余</span>
+      <span class="tag">可链接</span>
+    </div>
+  </div>
+
+  <!-- 常见说明 / 问答摘要 -->
+  <div class="faq-section">
+    <h2>关于资料整理的一些说明</h2>
+
+    <div class="faq-item">
+      <strong>这些内容来自哪里？</strong>
+      <p>大部分来自日常阅读、工作积累以及公开信息筛选。每一条都会标注原始出处或相关上下文，方便溯源。核心原则是只整理经过理解的内容，不直接堆砌原始文本。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>索引之后如何查找？</strong>
+      <p>社区内采用分类 + 标签的双重结构，同时每篇笔记都会内链到相关主题。你也可以直接使用页面内搜索（或浏览器查找）定位关键词。若想了解整体框架，推荐从资料导航页开始。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>是否允许复制或引用？</strong>
+      <p>可以。所有公开内容都可以在注明来源的情况下引用。但请注意内容本身可能包含第三方链接或引用，使用时请自行核实其准确性。详细说明可在<a href="https://web-lgw.com">老哥社区</a>相关页面中找到。</p>
+    </div>
+
+    <div class="faq-item">
+      <strong>更新频率如何？</strong>
+      <p>不定期更新，依据资料积累节奏。社区不追求日更或数量，更在意每次新增都能和前后的笔记形成关联。如果你觉得某个分类缺失，也可以提出建议，我会评估是否补充。</p>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    由 <a href="https://web-lgw.com">老哥社区</a> 维护 · 资料整理 · 索引优先<br>
+    <span style="opacity: 0.5; font-size: 0.8rem;">以可查找为目标的轻量导航站</span>
+  </div>
+
+</div>
+</body>
+</html>
