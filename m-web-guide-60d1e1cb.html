@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>九游 · 一处可以慢慢了解的站点</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #faf7f2;
+      font-family: "Noto Serif SC", "Source Han Serif SC", "Times New Roman", serif;
+      color: #2d2a26;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background-color: #fffcf8;
+      border-radius: 24px;
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.04);
+      padding: 3rem 2.5rem 4rem;
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 2rem 1.25rem 3rem;
+        border-radius: 16px;
+      }
+    }
+
+    .hero-sentence {
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #443e37;
+      border-left: 5px solid #c7b7a4;
+      padding-left: 1.2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-sentence em {
+      font-style: normal;
+      background: linear-gradient(135deg, #a68d78 0%, #7c6b5b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+      text-indent: 2em;
+    }
+
+    .intro a {
+      color: #7c5f48;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dashed #c7b7a4;
+      transition: border-color 0.25s;
+    }
+
+    .intro a:hover {
+      border-bottom-color: #7c5f48;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2.8rem 0 2.2rem;
+    }
+
+    @media (max-width: 540px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    .feature-card {
+      background: #f7f2eb;
+      border-radius: 16px;
+      padding: 1.6rem 1.4rem 1.8rem;
+      transition: background 0.25s;
+    }
+
+    .feature-card:hover {
+      background: #efe8de;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #4e3f33;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #564d44;
+      line-height: 1.6;
+    }
+
+    .quote-block {
+      background: #f5f0ea;
+      border-left: 6px solid #bfae9a;
+      padding: 1.4rem 1.8rem;
+      border-radius: 8px;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .quote-block p {
+      font-size: 0.98rem;
+      color: #4f443b;
+      margin-bottom: 0.3rem;
+    }
+
+    .quote-block .source {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #8a7b6e;
+      margin-top: 0.4rem;
+    }
+
+    .closing {
+      font-size: 1rem;
+      color: #4d4239;
+      line-height: 1.8;
+      border-top: 1px solid #e2d8ce;
+      padding-top: 1.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .closing a {
+      color: #7c5f48;
+      text-decoration: none;
+      border-bottom: 1px solid #dacbc1;
+      transition: border-color 0.2s;
+    }
+
+    .closing a:hover {
+      border-bottom-color: #7c5f48;
+    }
+
+    .footnote {
+      margin-top: 2.8rem;
+      font-size: 0.8rem;
+      color: #b1a394;
+      text-align: center;
+      border-top: 1px dashed #ddd6cc;
+      padding-top: 1.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="hero-sentence">
+      偶尔需要一个<em>安静</em>的站点。
+    </div>
+
+    <p class="intro">
+      在翻阅网络上的各种内容时，我们常常会遇到一些页面简洁、功能专注的站点。<a href="https://m-web-9game.com">九游</a>正是这样一个地方——它不像大型门户那样喧嚣，更像一间经过细心打理的小工作室，提供的服务清晰明了，没有多余的装饰。如果你恰好喜欢直白、可信的信息入口，这里或许值得你花几分钟慢慢看一看。
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>结构清晰</h3>
+        <p>页面的导航与内容区块划分明确，少有冗余的弹窗或广告干扰，能较快找到自己关心的部分。</p>
+      </div>
+      <div class="feature-card">
+        <h3>内容克制</h3>
+        <p>文字介绍平实，不堆砌热门词汇，也不使用耸动表述，读起来更像一份诚恳的使用说明书。</p>
+      </div>
+      <div class="feature-card">
+        <h3>访问流畅</h3>
+        <p>整体加载表现轻快，在多数网络环境下都能保持稳定的响应，不需要等待太久。</p>
+      </div>
+      <div class="feature-card">
+        <h3>日常可用</h3>
+        <p>无论是通过手机还是桌面浏览器打开，排版与交互都做了适配，阅读体验比较一致。</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>“一开始只是随手点开，后来发现它居然成了我每天都会打开几次的站点——因为足够简单，所以不会让人觉得累。”</p>
+      <p class="source">—— 一位常访问的用户留言</p>
+    </div>
+
+    <div class="closing">
+      一台设备、一个浏览器、一个稳定的链接，就构成了使用<a href="https://m-web-9game.com">九游</a>的全部前提。没有花哨的启动画面，也没有让人眼花缭乱的注册流程。它更像一个老朋友，安静地待在网络的某个角落，只要你想起它，它就在那里。希望这个页面能让你对它有更真实的印象——不多不少，刚刚好。
+    </div>
+
+    <div class="footnote">
+      · 基于真实的浏览体验 · 页面内容仅供介绍参考 ·
+    </div>
+  </div>
+</body>
+</html>
